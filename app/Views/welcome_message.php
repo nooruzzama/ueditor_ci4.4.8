@@ -237,6 +237,51 @@
 
 <section>
 
+
+
+
+    <!-- UEDITOR BOF --> 
+    <h1>ueditor in ci4</h1>
+    <p>Modified Or Added Files
+        <ul>
+            <li>Modified:app\Config\Constants.php >> //DIR_WRITE_MODE added this in app\config\constants.php</li>
+            <li>Modified:app\Config\Filters.php >> comment : after >> toolbar</li>
+            <li>Modified:app\Config\Routes.php</li>
+            <li>Modified:app\Views\welcome_message.php</li>
+            <li>Added:app\Config\UEditorConfig.php</li>
+            <li>Added:app\Controllers\Ueditor.php</li>
+            <li>Added:public\plugins\jquery</li>
+            <li>Added:public\plugins\ueditor</li>
+        </ul>
+    </p>
+    <script type="text/javascript" src="<?=base_url('plugins/jquery/jQuery-2.1.4.min.js')?>"></script>
+    <script type="text/javascript" src="<?=base_url('plugins/ueditor/ueditor.config.js')?>"></script>
+    <script type="text/javascript" src="<?=base_url('plugins/ueditor/ueditor.all.min.js')?>"></script>
+    <script type="text/javascript" src="<?=base_url('plugins/ueditor/lang/en/en.js')?>"></script>
+    
+    <!-- content BOF -->
+    <script id="editor" type="text/plain" style="width:100%;height:500px;"></script>
+    <code id="content" style="display: none;">
+      <span class="signature_default_set">Additional Content</span>
+    </code>
+    <script type="text/javascript">
+        $(window).load(function() { //alert("hi");
+            //new toolbar
+            /*var html='<select><option>New 1<option></select>';
+            $("#edui2").append(html);
+            var temphtml='<select><option>New 2<option></select>';
+            $("#edui2").append(temphtml);*/
+
+            UE.getEditor('editor',{ serverUrl:'/ueditor'}).setContent($('#content').html());
+
+        });
+    </script>
+    <!-- content EOF -->
+    <!-- UEDITOR EOF -->
+
+
+
+
     <h1>About this page</h1>
 
     <p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
